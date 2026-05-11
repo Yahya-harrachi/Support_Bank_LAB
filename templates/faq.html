@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Frequently Asked Questions</h2>
+<div class="accordion mt-4" id="faqAccordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                How do I reset my password?
+            </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                You can reset your password by clicking "Forgot Password" on the login page.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                How long do transfers take?
+            </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                Internal transfers are instant. External transfers take 1-2 business days.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Is my money safe?
+            </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                Yes, we use 256-bit encryption and FDIC insurance up to $250,000.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

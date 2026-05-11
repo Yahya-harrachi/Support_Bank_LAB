@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2>Submit a Support Ticket</h2>
+        <p class="text-muted">Fill out the form below and our team will respond within 24 hours.</p>
+        
+        <form method="POST" class="mt-4">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.name.label(class="form-label") }}
+                {{ form.name(class="form-control", placeholder="John Doe") }}
+                {% for error in form.name.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="mb-3">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control", placeholder="john@example.com") }}
+                {% for error in form.email.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="mb-3">
+                {{ form.subject.label(class="form-label") }}
+                {{ form.subject(class="form-control", placeholder="Brief description of your issue") }}
+                {% for error in form.subject.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="mb-3">
+                {{ form.message.label(class="form-label") }}
+                {{ form.message(class="form-control", rows=5, placeholder="Please provide details...") }}
+                {% for error in form.message.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Ticket</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

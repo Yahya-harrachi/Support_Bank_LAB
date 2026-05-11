@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Search Results for "{{ query }}"</h2>
+
+<div class="alert alert-info mt-3">
+    <strong>Debug Mode:</strong> Showing {{ tickets|length }} results
+</div>
+
+{% if fake_results %}
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning">Admin Results (Restricted)</div>
+    <div class="card-body">
+        {% for result in fake_results %}
+            <div class="mb-3">
+                <strong>{{ result.subject }}</strong>
+                <p class="mb-0 text-muted">{{ result.message }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<h4>Your Results</h4>
+<div class="list-group">
+    {% for ticket in tickets %}
+        <div class="list-group-item">
+            <h5>{{ ticket.subject }}</h5>
+            <p>{{ ticket.message[:200] }}...</p>
+            <small class="text-muted">Ticket #{{ ticket.id }}</small>
+        </div>
+    {% else %}
+        <div class="alert alert-secondary">No tickets found.</div>
+    {% endfor %}
+</div>
+
+<a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+{% endblock %}
