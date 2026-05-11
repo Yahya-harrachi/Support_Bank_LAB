@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="alert alert-warning">
+    <i class="bi bi-shield-exclamation"></i> <strong>⚠️ HONEYPOT ACTIVE</strong> - This is a fake admin panel for monitoring attackers.
+</div>
+
+<h2>Admin Control Panel</h2>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-danger text-white">User Database (Fake)</div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr><th>Name</th><th>Email</th><th>Balance</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for user in fake_users %}
+                        <tr>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>${{ "%.2f"|format(user.balance) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-warning">Leaked Credentials (Honeytokens)</div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr><th>Username</th><th>Password</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for cred in fake_credentials %}
+                        <tr>
+                            <td>{{ cred.username }}</td>
+                            <td><code>{{ cred.password }}</code></td>
+                            <td>{{ cred.description }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{{ url_for('main.fake_backup') }}" class="btn btn-danger">Download Database Backup</a>
+    <a href="{{ url_for('main.debug_endpoint') }}" class="btn btn-secondary">View Environment Variables</a>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center mt-5">
+    <h1 class="display-4">PrimeTrust Support Portal</h1>
+    <p class="lead">How can we help you today?</p>
+    
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-question-circle fs-1"></i>
+                    <h4>FAQ</h4>
+                    <p>Frequently asked questions about your account</p>
+                    <a href="/faq" class="btn btn-outline-primary">View FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-book fs-1"></i>
+                    <h4>Knowledge Base</h4>
+                    <p>Articles and guides for online banking</p>
+                    <a href="/knowledge-base" class="btn btn-outline-primary">Read Articles</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-envelope fs-1"></i>
+                    <h4>Contact Support</h4>
+                    <p>Submit a ticket and we'll get back to you</p>
+                    <a href="/contact" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
