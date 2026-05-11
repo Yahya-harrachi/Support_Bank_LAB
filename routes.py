@@ -88,13 +88,7 @@ def dotenv_leak():
     log_attack('/.env')
     content = """# Bank Production Environment - DO NOT COMMIT
 DATABASE_URL=mysql://prod_admin:SuperSecure2024!@internal-db.bankapp.internal:3306/production
-REDIS_URL=redis://cache.internal:6379/0
-JWT_SECRET=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.prod_secret_key_2024
-AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
-AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-INTERNAL_API=http://192.168.100.50:8080
-SSH_HOST=192.168.100.50
-SSH_USER=deploy
+
 """
     return Response(content, mimetype='text/plain')
 
