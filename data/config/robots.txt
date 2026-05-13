@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin
+Disallow: /cache/
+Disallow: /config/
+Disallow: /system/
+Disallow: /temp/.git
+Disallow: /public/info/debug
+Sitemap: https://support.bankapp.com/sitemap.xml

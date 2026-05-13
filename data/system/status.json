@@ -1,0 +1,37 @@
+{
+  "service": "banking-api",
+  "version": "3.2.1-prod",
+  "environment": "production",
+  "status": "operational",
+  "uptime_seconds": 3888000,
+  "uptime_human": "45 days",
+  "timestamp": "2025-01-15T10:30:00Z",
+  "components": {
+    "database": {
+      "status": "connected",
+      "host": "internal-db.bankapp.internal",
+      "latency_ms": 4
+    },
+    "redis": {
+      "status": "connected",
+      "host": "cache.internal",
+      "connected_clients": 1247
+    },
+    "api": {
+      "status": "healthy",
+      "requests_per_minute": 2450,
+      "error_rate": 0.02
+    }
+  },
+  "internal_network": {
+    "gateway": "192.168.100.1",
+    "dns": "192.168.100.53",
+    "backup_server": "192.168.100.60",
+    "monitoring": "192.168.100.99:9090"
+  },
+  "deployment": {
+    "region": "us-east-1",
+    "cluster": "prod-bank-cluster",
+    "node_id": "i-0a1b2c3d4e5f67890"
+  }
+}
